@@ -42,9 +42,40 @@ Run the following command to install all required dependencies:
 npm install
 ```
 
-6.
+6.Configuring Environment Variables
 
-### Start the Server
+To properly set up your environment, follow these steps:
+
+1. **Create a `.env` file**In the root directory of your project, create a file named `.env`.
+2. **Add the following environment variables**
+   Open the `.env` file and add the following configuration:
+
+   ODE_ENV=development
+   PORT=3000
+   DB_URI=mongodb+srv://`<username>`:`<password>`@cluster.mongodb.net/yourdatabase
+   JWT_SECRET=yourjwtsecret
+   JWT_EXPIRES_IN=90d
+   EMAIL_HOST=smtp.example.com
+   EMAIL_PORT=587
+   EMAIL_USER=[your-email@example.com]()
+   EMAIL_PASS=your-email-password
+
+   3.
+
+   - Replace `<username>` and `<password>` with your MongoDB Atlas credentials.
+   - Set `yourjwtsecret` to a secure secret key for signing JWT tokens.
+   - Enter your email SMTP server details if you're using email functionality.
+
+   3. **Save the `.env` file**
+      Once you’ve updated the `.env` file, save it.
+
+   These variables will be used by the application for various configurations like database connection, email handling, and JWT token management.
+
+   ***
+
+   Once the `.env` file is configured, you can start the application as usual.
+
+7.Start the Server
 
 Run the development server using:
 
